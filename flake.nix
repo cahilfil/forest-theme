@@ -1,11 +1,8 @@
 {
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem
-    (system: { packages.${system}.theme = builtins.toString ./.; });
+  outputs = { self }:
+    let system = "x86_64-linux";
+    in { packages.${system}.theme = builtins.toString ./.; };
 }
 
