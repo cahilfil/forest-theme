@@ -10,5 +10,9 @@
   <xsl:include href="tree.xsl" />
 
   <!-- <xsl:template match="pause"></xsl:template> -->
-
+  <xsl:template match="title">
+    <title>
+      <xsl:value-of select="translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"/>
+    </title>
+  </xsl:template>
 </xsl:stylesheet>

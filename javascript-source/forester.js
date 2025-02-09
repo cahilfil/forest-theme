@@ -92,5 +92,3 @@ window.addEventListener("load", (event) => {
    ninja.data = items
   }); 
 });
-
-
