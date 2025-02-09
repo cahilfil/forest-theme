@@ -2,7 +2,12 @@
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
   outputs = { self, nixpkgs, ... }:
-    let system = "x86_64-linux";
-    in { packages.${system}.theme = builtins.toString ./.; };
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in {
+      packages.${system}.theme = pkgs.runCommand "forest-theme" { } ''
+        cp -r . $out
+      '';
+    };
 }
-
