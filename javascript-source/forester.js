@@ -92,5 +92,3 @@ fetch("./forest.json")
 
   ninja.data = items
  });
-
-

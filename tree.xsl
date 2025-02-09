@@ -20,8 +20,10 @@
           </xsl:if>
         </script>
         <script type="module" src="forester.js"></script>
+        <script src="reload.js"></script>
+        <!-- genzifier no. 2 --> 
         <title>
-          <xsl:value-of select="/f:tree/f:frontmatter/f:title[@text]" />
+          <xsl:value-of select="translate(/f:tree/f:frontmatter/f:title[@text], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')" />
         </title>
       </head>
       <body>
@@ -30,8 +32,8 @@
           <header class="header">
             <nav class="nav">
               <div class="logo">
-                <a href="index.xml" title="Home">
-                  <xsl:text>« Home</xsl:text>
+                <a href="index.xml" title="home">
+                  <xsl:text>« home</xsl:text>
                 </a>
               </div>
             </nav>
