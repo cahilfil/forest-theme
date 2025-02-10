@@ -7,7 +7,8 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       packages.${system}.theme = pkgs.runCommand "forest-theme" { } ''
-        cp -r . $out
+        mkdir -p $out
+        cp -r ${./.}/* $out
       '';
     };
 }
